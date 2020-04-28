@@ -1,0 +1,75 @@
+You must setup teams to go on deep-space missions for Oganesson Dynamics, exploring new planets, asteroid belts, and astrological anomolies. For each mission, you must make sure the assigned team covers a specific set of skills needed and is as small as possible.
+
+For each test, determine the smallest team that you can assemble that posseses all of the needed skills.
+
+NOTE: For this problem, your program must be guaranteed to output the correct answer (or timeout in the process of searching). If your program's output is incorrect for a single test cases, it will receive 0 credit on this problem (regardless of how many other test cases it passes). Timing out is allowed, however. Test cases on which you time out will result in no points from that test case, but will not zero out points earned on test cases where your program returned the correct output.
+Input Format
+The first line has two values,  N and K.
+
+N represents the number of candidates for the mission, and K  is the number of distinct skills that (combined) the candidates must possess.
+
+The second line has K words on it, listing the specific skills that are required.
+
+The next N pairs of lines each provide information about a single person.
+
+The first line in the pair for person i indicates the number of skills that person has ( Pi ), and the second line lists those Pi  specific skills.
+Constraints
+1 ≤ N ≤ 200
+1 ≤ K ≤ 200
+0 ≤ Pi  ≤ K
+Output Format
+You must output a single value indicating the fewest people that you can choose for the mission while having all of the needed skills rerpesented.
+
+Example 0
+
+Sample Input
+5 6
+Botany Neuroscience ArtificialLife Batteries Metals InformationTheory
+3
+Botany Neuroscience ArtificialLife
+2
+Botany Batteries
+1
+Botany
+4
+Botany Batteries Metals InformationTheory
+3
+Neuroscience Batteries InformationTheory
+Sample Output
+2
+Explanation
+Five people are available to cover six required skills.
+
+Only two of the people are needed. The first person (who provides Botany, Neuroscience, and ArtificialLife) and the fourth person (who provides Batteries, Metals, and InformationTheory, as well as duplicating Botany). No smaller answer is possible since no single person has all six skills.
+
+Example 1
+
+Sample Input
+10 8
+Plastics Fermentation Ceramics InformationTheory CloudComputing EnvironmentalScience Biometrics PlasmaPhysics
+4
+Plastics Fermentation Ceramics InformationTheory
+4
+Plastics Fermentation CloudComputing EnvironmentalScience
+4
+Plastics Ceramics Biometrics PlasmaPhysics
+4
+Plastics Fermentation Ceramics CloudComputing
+4
+Plastics Fermentation Ceramics EnvironmentalScience
+4
+Fermentation Ceramics InformationTheory CloudComputing
+4
+Fermentation InformationTheory EnvironmentalScience PlasmaPhysics
+4
+Ceramics InformationTheory CloudComputing Biometrics
+4
+InformationTheory CloudComputing Biometrics PlasmaPhysics
+4
+InformationTheory CloudComputing EnvironmentalScience PlasmaPhysics
+Sample Output
+2
+Explanation
+10 People are available to cover eight skills.
+
+It is possible to use only two people: The fifth person knows Plastics, Fermentation, Ceramics, and EnvironmentalScience. The ninth person knows InformationTheory, CloudComputing, Biometrics, and PlasmaPhysics. No tasks are duplicated across both selected people.

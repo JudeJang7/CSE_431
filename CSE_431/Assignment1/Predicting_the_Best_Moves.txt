@@ -1,0 +1,78 @@
+Description
+
+Dr. Abagale Xenovian, a reclusive mathematician and master of games, has found a potentially valuable exploit in her favorite video game. When she uses a special attack combination, one of two things happen:
+
+1. If her score is even, she loses 99 points and then her score is multiplied by 3.
+
+2. If her score is odd, she loses 15 points and then her score is multiplied by 2.
+
+Note that all scores are limited to a max value of 1,000,000. Any score that hits that limit will immediately loop back around (so a score of 1,000,007 just becomes a score of 7). Likewise, any score that goes below zero ALSO loops around (so a score of -7 would become a score of 999,993).
+
+Given a starting score ( S ) and a number of times the exploit is used ( k ), determine Dr. Xenovian's final score in the game.
+
+Input Format
+
+The first line is a number ( T ), indicating the number of test cases. The next T lines each have two values, S and k, indicating the starting score and the number of times the exploit is used, respectively.
+
+Constraints
+
+1 ≤ T ≤ 100
+0 ≤ S ≤ 1,000,000
+0 ≤ k ≤ 100
+Output Format
+
+T lines, each indicating the final score in the associated game.
+
+Example 0
+
+Sample Input 
+
+3
+1000 1
+1000 2
+1000 5
+Sample Output 
+
+2703
+5376
+94599
+Explanation
+
+Three test cases are provided. Each starts with 1,000 points.
+
+In the first case, only a single exploit is used. Since the starting value is even, 99 is subtracted from it (leaving 901) and this result is tripled, producing 2703.
+
+The second test case applies the exploit twice. The first step results in 2703 (as above), but the value is now odd; as such, the second step subtracts 15 (brining it to 2688) and then doubles the value to 5376.
+
+The third test case uses the exploit three more times. Since the value after two is even, 99 is subtracted (putting it at 5277) and the value is tripled to 15,831. Next 15 is subtracted (15816) and the value is doubled (31632). Finally 99 us subtracted again (31533) and the value is tripled to 94599.
+
+Example 1
+
+Sample Input 
+
+5
+1 5
+10 5
+100 5
+1000 5
+10000 5
+Sample Output 
+
+994624
+987679
+997399
+94599
+66599
+Explanation
+
+Five test cases. The first one is described below.
+
+1 is odd, so we subtract 15, which results in -14 and loops around to 999,986, but then we multiply by two giving us 1,999,972 and loops back to 999,972.
+
+999,972 is even, so we subtract 99 (getting 999,873) and multiply by 3 (getting 2,999,619, looping back to 999,619).
+
+999,619 is odd, so we subtract 15 (999,604) and multiply by 2 (1999208 looping to 999208).
+
+999208 is even, so we subtract 99 (999,109) and multiply by 3 (2997327 looping to 997327).
+
+997327 is odd, so we subtract 15 (997,312) and multiply by 2 (1994624 looping to 994624).

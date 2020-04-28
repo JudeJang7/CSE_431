@@ -1,0 +1,100 @@
+Description
+
+Of all of their discoveries, Oganesson Dynamics is most excited by their new warp engines. The problem is that they go through the quadlithium crystals that power them much too quickly. Can you help figure out how to get the crystals to last for as long as possible?
+
+Warp engines apply one of K different frequencies to a crystal to extract power from it for an hour, after which the crystal breaks into smaller crystals (some of which may be used again!). Each frequency i is associated with a fracture value Fi  indicating the size of the crystals that this one will break into when used.
+
+Frequency i can only be used if S (the size of the crystal) is greater than Fi and can be evenly divided by Fi . The crystal then breaks into P/Fi  crystals each of which is size is size Fi .
+
+Since each application of a frequency to a crystal can power the engine for an hour, what is the LONGEST amount of time (in hours) that the ship can fly given a single starting crystal of size N ?
+
+Input Format
+
+The first line contains an integer, T, denoting the number of tests to be performed. The subsequent T pairs of lines describe each test in the following format:
+
+The first line contains two space-separated integers describing the respective values of S (the size of the initial crystal) and K (the number of available frequencies).
+The second line contains K space-separated integers describing the values of F0 through FK-1.
+Constraints
+
+1 ≤ T ≤ 10
+1 ≤ S ≤ 1012
+1 ≤ K ≤ 1000
+1 ≤ Fi  ≤ 1012
+Output Format
+
+For each test, determine the maximum number of hours that the ship can be powered given the starting crystal; output this value on its own line.
+
+Example 0
+
+Sample Input 
+
+1
+12 3
+2 3 4
+Sample Output 
+
+4
+Explanation
+
+This input has 1 test case.
+
+That test case starts with a crystal of size 12 and three frequences that would break a crystal into sizes 2, 3, or 4 (respectively).
+
+Crystals: 12
+The longest set of crystal uses starts with the frequency that produces crystals of size 4, which shatters the initial crystal into three smaller ones.
+
+Crystals: 4 4 4
+For our second hour, use frequency "2" on one of our size-4 crystals.
+
+Crystals: 4 4 2 2
+For our third hour, we again use frequency "2" on one of our size-4 crystals.
+
+Crystals: 4 2 2 2 2
+For our fourth and final hour, we again use frequency "2" on the final crystal of size four.
+
+Crystals: 2 2 2 2 2 2
+No additional steps are possible.
+
+Example 1
+
+input01.txt
+
+output01.txt
+
+Example 2
+
+input02.txt
+
+output02.txt
+
+Example 3
+
+input03.txt
+
+output03.txt
+
+Example 4
+
+input17.txt
+
+output17.txt
+
+Example 5
+
+Sample Input 
+
+1
+84 4
+42 7 6 3
+Sample Output 
+
+17
+Explanation
+
+The initial crystal size is 84.
+
+The best path way is:
+
+break the size 84 crystal into 2 crystals of size 42 (1 hour)
+break both size 42 crystals into 7 crystals each of size 6 (2 hours)
+break each of the 14 size 6 crystals into size 3 crystals (14 hours)

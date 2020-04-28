@@ -1,0 +1,79 @@
+Description
+
+Dr. Xenovian has come up with an even better layout for the cores in her new computer system. This time, though, her specialized architecture requires that the cores are divided into two processing units, a CPU and an IPU (intelligence processing unit), each of which must be arranged in a PLUS shape. These pluse-shaped processing units have to be placed to avoid the other components on the motherboard. Can you help her figure out how big to make them?
+
+You are given a grid of size N-by-M representing the motherboard. Each cell on this grid is either a good or bad place to put a core.
+
+Each processing unit must be shaped like a plus sign on a grid. A valid plus has a horizontal line of cells and a vertical line of cells of equal lengths and crossing in the middle.
+
+The overall processing speed is the number of cells in the CPU times the number of cells in the IPU. You must calculate the maximum processing speed.
+
+Input Format
+
+The first line contains two space-separated integers, N and M.
+
+The N subsequent lines each contain M characters, where each character is either G (a good place to put a core) or B (a bad place to put a core).
+
+ Constraints
+
+2 ≤ N ≤ 15
+2 ≤ M ≤ 15
+Output Format
+
+ Output the maximum production level.
+
+Example 0
+
+Sample Input 
+
+5 6
+GGGGGG
+GBBBGB
+GGGGGG
+GGBBGB
+GGGGGG
+Sample Output 
+
+5
+Explanation
+
++GGGGG
+GBBB*B
+GGG***
+GGBB*B
+GGGGGG
+The CPU (*'s) can have five cores. The IPU (+) can only be one core. This layout gives us a max processing power of 5 x 1 = 5
+
+Example 1
+
+Sample Input 
+
+6 6
+BGBBGB
+GGGGGG
+BGBBGB
+GGGGGG
+BGBBGB
+BGBBGB
+Sample Output
+
+25
+Explanation
+
+B+BBGB
++++GGG
+B+BB*B
+GGG***
+BGBB*B
+BGBBGB
+The CPU (*'s) and IPU (+'s) can both have cores for 5 x 5 = 25 max processing power value.
+
+Note that other combinations are also possible, such as:
+
+BGBB*B
+GGG***
+B+BB*B
++++GGG
+B+BBGB
+BGBBGB
+But the total processing speed is the same.

@@ -1,0 +1,71 @@
+Description
+
+N of your best robot friends have been invited to participate in a game of 'Hats!'. Can you write the instructions (a program) for each robot to follow that guarantees victory?
+
+In every game of 'Hats!', there are N players and N possible hat colors. At the beginning of the game, each player has a randomly colored hat (one of the known N possible colors) placed on their head. Players can see the hat colors of other players, but CANNOT see their own hat color. Further, no communication is allowed during a game of 'Hats!'. To win, each player must write down which color they think their hat is, and if at least one player is correct, everyone wins. If no one correctly guesses their hat color, everyone loses.
+
+NOTE: not all possible hat colors may be assigned, and multiple players may have duplicate hat colors.
+
+Write a program that, if executed by each of your robot friends, will guarantee they win as a group (i.e., at least one guesses their hat color).
+
+For this problem, your program will be evaluated differently than in previous problems. For every test case, we will run your program N times, once for each robot. Each time, we will provide the following inputs: N (the number of possible colors and the number of players), P (the current player's ID), the set of possible colors, and the hat colors the current player sees. You will pass a test case if, for at least one of the players, your program outputs the correct hat color.
+
+Credit for this problem is all or nothing. You must pass all tests to receive credit.
+
+Input Format
+
+The first line contains two space-separated integers, N and P.
+The second line contains a space separated list of strings where each string is a possible hat color.
+The third line contains a space separated list of strings where each string represents the hat colors the current player sees.
+Constraints
+
+1 ≤ N,P ≤ 865
+Output Format
+
+Output the (string) color written down by the current player.
+
+Example 0
+
+In this example, there are five players (robots) and five possible hat colors. Each robot's program (i.e., the program you submit) is run independently and given as input N (the number of hat colors and number of total players), P (the current player's ID), and the current player's view of everyone else's hats.
+
+In this example, the true hat color assignment is as follows:
+
+Robot 0: orange_peel
+Robot 1: orange_peel
+Robot 2: orange_peel
+Robot 3: gainsboro
+Robot 4: yellow
+Robot 0
+
+5 0
+gainsboro orange_peel fawn yellow white_smoke
+orange_peel orange_peel gainsboro yellow
+Robot 1
+
+5 1
+gainsboro orange_peel fawn yellow white_smoke
+orange_peel orange_peel gainsboro yellow
+Robot 2
+
+5 2
+gainsboro orange_peel fawn yellow white_smoke
+orange_peel orange_peel gainsboro yellow
+Robot 3
+
+5 3
+gainsboro orange_peel fawn yellow white_smoke
+orange_peel orange_peel orange_peel yellow
+Robot 3
+
+5 4
+gainsboro orange_peel fawn yellow white_smoke
+orange_peel orange_peel orange_peel gainsboro
+Explanation
+
+In this example, your program would be run five times, once for each robot. Each time your program is run, output the robot's guess. In this example, your program would be correct if at least one of the following was true:
+
+Robot 0 output 'orange_peel'
+Robot 1 output 'orange_peel'
+Robot 2 output 'orange_peel'
+Robot 3 output 'gainsboro'
+Robot 4 output 'yellow'

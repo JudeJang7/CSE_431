@@ -1,0 +1,74 @@
+Description
+
+Oganesson Dynamics have design a new type of modular supercomputer. Each of the computer's modules are able to stack vertically together. All of the modules are rectangular cubes of the same height and depth (1 unit long each), but their widths come in 4 lengths (1, 2, 3, and 4 units long). Each module has input ports on its bottom and output ports on its top. Thus, in order for there to be connectivity between the entire supercomputer, there must NOT be any vertical split that goes through every row in the same position (doing so would partition the computer).
+
+Oganesson Dynamics needs to know how many possible configurations of the supercomputer are possible given a particular set of dimensions (width and height).
+
+Important things to remember:
+
+The assembled computer must be built horizontally, meaning that pieces are laid horizontally, not vertically (i.e., input ports always face up and output ports always face down).
+The computer can't have any gaps (i.e., the entire computer must be filled with modules).
+The computer can't be vertically partitioned. There cannot be a seam that runs from the top of the computer to the bottom: see the following diagram for some examples of an assembled computer that is two units tall and three unts wide. (note, this diagram does not show all legal configurations, just some of them).
+image
+
+Examples:
+
+If the required dimensionality for the computer is 1 unit tall and 1 unit wide, there is only one possible configuration as only 1 module can fit.
+If computer must be 2 units tall by 2 units wide, there are 3 possible configurations:
+(1) a 2-long module on top of a 2-long module
+(2) a 2-long module with 2 1-long modules on top
+(3) 2 1-long modules with a 2-long module atop them
+NOTE: 2 1-long modules atop 2 1-long modules isn't valid because there would be a vertical seam through the middle.
+If the computer must be 3 units tall by 2 units wide, there are 7 configurations: each row can be either a 2-long module or 2 1-long modules. So there are 2 x 2 x 2 possible options. However, 1 configuration (where all of the module are 1-long) results in a vertical seam that goes all the way through (like the previous example).
+As the number of configurations possible becomes quite large for large computers, return your result as the number of configurations mod(109 + 7).
+
+Input Format
+
+The first line contains T, the number of test cases.
+Each test comprises two values separated by a space:
+The first value, H, represents the height of the supercomputer.
+The second value, L, represents the length of the supercomputer.
+Constraints
+
+1 ≤ T ≤ 10
+1 ≤ H, L ≤ 1000
+Output Format
+
+Output T lines, the number of legal configurations that can be produced for each test case modulus 1000000007.
+
+Example 0
+
+Sample Input 
+
+4
+1 1
+2 2
+3 2
+3 3
+Sample Output 
+
+1
+3
+7
+49
+Example 1
+
+Sample Input 
+
+7
+10 1
+5 2
+2 5
+6 4
+4 5
+100 100
+500 500
+Sample Output 
+
+1
+31
+50
+250047
+35714
+928745576
+798212178
